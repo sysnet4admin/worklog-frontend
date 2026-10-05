@@ -1,10 +1,10 @@
-FROM node:20-bookworm-slim
+FROM node:24-bookworm-slim
 
 COPY . /app
 WORKDIR /app
 
 RUN set -x \
-    && yarn install
+    && yarn install --network-timeout 360000
 
 ENV VITE_API_URL="http://localhost:8000"
 ENTRYPOINT ["yarn"]
