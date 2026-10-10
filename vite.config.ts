@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tsconfigPaths(), TanStackRouterVite()],
     server: {
-      allowedHosts: [".myk8s.local"],
+      allowedHosts: [".myk8s.local", ".elb.amazonaws.com"],
       proxy: {
         "/api": {
           target: env["VITE_API_URL"],
